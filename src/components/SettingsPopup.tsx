@@ -16,7 +16,7 @@ function SettingsPopup() {
     <>
       <div className="settings-button-container">
         <Button color="secondary" size="small" onClick={handleToggle}>
-          ⚙️ Settings
+          ⚙️ {t("settings")}
         </Button>
       </div>
 

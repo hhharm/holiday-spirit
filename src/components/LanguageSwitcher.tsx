@@ -10,6 +10,10 @@ function LanguageSwitcher() {
   const { i18n, t } = useTranslation();
 
   const handleLanguageChange = (languageCode: string) => {
+    // Persist selection and switch language
+    try {
+      localStorage.setItem("i18nextLng", languageCode);
+    } catch {}
     i18n.changeLanguage(languageCode);
   };
 
@@ -17,7 +21,7 @@ function LanguageSwitcher() {
     <div className="language-switcher">
       <label>{t("languageSelector")}</label>
       <select
-        value={i18n.language}
+        value={i18n.resolvedLanguage || i18n.language?.split("-")[0]}
         onChange={(e) => handleLanguageChange(e.target.value)}
         className="language-select"
       >

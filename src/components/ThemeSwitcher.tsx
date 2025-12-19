@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 const themes = [
-  { code: "light", name: "Light", icon: "☀️" },
-  { code: "dark", name: "Dark", icon: "🌙" },
-  { code: "christmas", name: "Christmas", icon: "🎄" },
+  { code: "light", labelKey: "themeLight", icon: "☀️" },
+  { code: "dark", labelKey: "themeDark", icon: "🌙" },
+  { code: "christmas", labelKey: "themeChristmas", icon: "🎄" },
 ];
 
 function ThemeSwitcher() {
@@ -32,7 +32,7 @@ function ThemeSwitcher() {
       >
         {themes.map((themeOption) => (
           <option key={themeOption.code} value={themeOption.code}>
-            {themeOption.icon} {themeOption.name}
+            {themeOption.icon} {t(themeOption.labelKey)}
           </option>
         ))}
       </select>
