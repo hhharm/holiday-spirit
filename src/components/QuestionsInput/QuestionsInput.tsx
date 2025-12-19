@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Button from "../shared/Button";
 import { predefinedSets } from "../../data/predefinedSets";
@@ -12,6 +12,7 @@ function QuestionsInput({ onSave }: QuestionsInputProps) {
   const [questions, setQuestions] = useState("");
   const [selectedSetId, setSelectedSetId] = useState("");
   const { t, i18n } = useTranslation();
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleLoadSet = () => {
     const selectedSet = predefinedSets.find((set) => set.id === selectedSetId);
@@ -51,7 +52,37 @@ function QuestionsInput({ onSave }: QuestionsInputProps) {
         rows={10}
       />
 
-      <div className="separator">{t("orEnterCustom")}</div>
+      <div className="separator">{t("orImportFromFile")}</div>
+
+      {/* Import from .txt */}
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept=".txt,text/plain"
+        style={{ display: "none" }}
+        onChange={(e) => {
+          const file = e.target.files?.[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = () => {
+            const text = (reader.result as string) || "";
+            setQuestions(text);
+          };
+          reader.readAsText(file);
+          // reset input to allow re-selecting same file
+          e.target.value = "";
+        }}
+      />
+      <Button
+        color="secondary"
+        size="small"
+        onClick={() => fileInputRef.current?.click()}
+        style={{ marginBottom: 8 }}
+      >
+        {t("importQuestions")}
+      </Button>
+
+      <div className="separator">{t("orSelectPredefined")}</div>
 
       <div className="predefined-sets">
         <div className="set-selector">

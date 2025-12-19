@@ -58,6 +58,24 @@ function QuestionsGrid({
         <Button color="secondary" size="small" onClick={onReset}>
           {t("resetQuestions")}
         </Button>
+        <Button
+          color="secondary"
+          size="small"
+          onClick={() => {
+            const text = savedQuestions.join("\n");
+            const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "questions.txt";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+          }}
+        >
+          {t("exportQuestions")}
+        </Button>
       </div>
 
       {selectedQuestion !== null && (

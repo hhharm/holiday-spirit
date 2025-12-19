@@ -4,6 +4,7 @@
   "proceed": "Proceed",
   "restartCards": "Restart cards",
   "resetQuestions": "Reset questions",
+  "exportQuestions": "Export .txt",
   "question": "Question",
   "close": "Close",
   "done": "Done!",
@@ -19,5 +20,8 @@
   "setIcebreakers": "Ice Breakers",
   "setReflection": "Year Reflection",
   "loadSet": "Load Set",
-  "orEnterCustom": "Or enter your own questions"
+  "importQuestions": "Import .txt",
+  "orEnterCustom": "Or enter your own questions",
+  "orImportFromFile": "Or import from file",
+  "orSelectPredefined": "Or select a predefined set"
 }

@@ -4,6 +4,7 @@
   "proceed": "Почати",
   "restartCards": "Перезапустити",
   "resetQuestions": "Ввести запитання заново",
+  "exportQuestions": "Експорт .txt",
   "question": "Запитання",
   "close": "Закрити",
   "done": "Готово!",
@@ -19,5 +20,8 @@
   "setIcebreakers": "Знайомство",
   "setReflection": "Підсумки року",
   "loadSet": "Завантажити набір",
-  "orEnterCustom": "Або введіть власні запитання"
+  "importQuestions": "Імпорт .txt",
+  "orEnterCustom": "Або введіть власні запитання",
+  "orImportFromFile": "Або імпортуйте з файлу",
+  "orSelectPredefined": "Або оберіть готовий набір"
 }
