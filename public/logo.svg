@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+    <title>Holiday Spirit</title>
+    <!-- Star -->
+    <polygon points="32,6 35,12 42,13 37,18 38,25 32,22 26,25 27,18 22,13 29,12" fill="#c0c0c0" />
+    <!-- Tree -->
+    <path d="M32 12 L18 30 H26 L16 42 H26 L12 56 H52 L38 42 H48 L38 30 H46 Z" fill="#228b22" />
+    <!-- Ornaments -->
+    <circle cx="24" cy="34" r="2" fill="#c0c0c0" />
+    <circle cx="40" cy="36" r="2" fill="#c0c0c0" />
+    <circle cx="32" cy="44" r="2" fill="#c0c0c0" />
+    <!-- Trunk -->
+    <rect x="29" y="56" width="6" height="6" rx="1" fill="#2f4f2f" />
+</svg>
