@@ -69,6 +69,14 @@ npm run build
 
 The built files will be in the `dist/` directory, ready for deployment to any static hosting service.
 
+### Deploying to GitHub Pages
+
+This project is configured for automatic deployment to GitHub Pages:
+
+1. **Automatic Deployment**: Every push to the `master` branch triggers a GitHub Actions workflow that builds and deploys the app
+2. **Manual Deployment**: You can also trigger deployment manually from the Actions tab in your GitHub repository
+3. **Live URL**: Once deployed, the app will be available at `https://hhharm.github.io/holiday-spirit/`
+
 ### Preview Production Build
 
 ```bash

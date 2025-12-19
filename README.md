@@ -2,6 +2,8 @@
 
 A web application designed to bring people together through engaging icebreaker questions. Perfect for company parties, team building events, and holiday gatherings!
 
+🎮 **[Try the live demo here!](https://hhharm.github.io/holiday-spirit/)**
+
 ## 🎄 What is Holiday Spirit?
 
 Holiday Spirit is an interactive question card game. The app presents a grid of numbered question cards that participants can click to reveal question to spark conversations and create memorable moments.
