@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# Holiday Spirit - Interactive Question Cards
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application designed to bring people together through engaging icebreaker questions. Perfect for company parties, team building events, and holiday gatherings!
 
-Currently, two official plugins are available:
+## 🎄 What is Holiday Spirit?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Holiday Spirit is an interactive question card game. The app presents a grid of numbered question cards that participants can click to reveal question to spark conversations and create memorable moments.
 
-## React Compiler
+## 🚀 How to Use
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Initial Setup
 
-## Expanding the ESLint configuration
+1. **First Visit**: When you open the app for the first time, you'll see a question input screen
+2. **Enter Questions**: Type or paste your icebreaker questions (one per line) into the textarea
+3. **Click Proceed**: Save your questions and start the game
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Questions are saved to your device only, and you'll have possibility to remove them later.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Playing the Game
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. **View the Grid**: You'll see a festive grid of numbered question cards against a holiday background
+2. **Select a Card**: Ask some one from your group to pick the card number and open it
+3. **Read the Question**: A popup appears showing the question in large, easy-to-read text
+4. **Choose Your Action**:
+   - **Close**: Dismiss the question without marking it as answered (maybe save it for later!)
+   - **Done**: Mark the question as answered - the card will turn gray and become disabled
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Managing Your Session
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Restart Button**: Clears all answered questions, allowing you to start fresh with the same question set
+- **Reset Button**: Completely clears all data and returns to the question input screen
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Tips for Best Experience
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Prepare 20-30 questions for a typical event
+- Mix light-hearted questions with deeper conversation starters
+- Encourage participants to elaborate on their answers
+- Use the "Close" option if a question doesn't fit the current mood
+- Consider having someone facilitate to ensure everyone gets a chance to participate
+
+## 📋 Sample Questions
+
+The app works great with questions themed around:
+
+- Holiday memories and traditions
+- Preferences and opinions
+- Fun hypothetical scenarios
+- Personal talents and experiences
+- Light-hearted "would you rather" questions
+
+## 🛠️ Technical Details
+
+For developers interested in running, modifying, or contributing to this project, please see the [Development Guide](DEVELOPMENT.md).
+
+## 📸 Credits
+
+- **Background Image**: Festive background photo from [PNGTree](https://pngtree.com/freebackground/festive-cheer-a-whimsical-christmas-wonderland_16070272.html?sol=downref&id=bef) - Free background photos
+- **Framework**: Built with React, TypeScript, and Vite
+
+## 📄 License
+
+This project is free to use under the MIT License. See [LICENSE](LICENSE) file for details. Feel free to modify, distribute, and use it for your events!
+
+---
+
+**Made with ❤️ by Nataliia Tolokontseva for spreading holiday cheer and bringing people together!**
