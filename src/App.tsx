@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
-import QuestionsInput from "./components/QuestionsInput";
+import QuestionsInput from "./components/QuestionsInput/QuestionsInput";
 import QuestionsGrid from "./components/QuestionsBoard/QuestionsGrid";
 import SettingsPopup from "./components/SettingsPopup";
 
 function App() {
+  // Initialize theme on app start
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "christmas";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  }, []);
+
   const [savedQuestions, setSavedQuestions] = useState<string[]>(() => {
     const saved = localStorage.getItem("saved_questions");
     console.log("saved_questions:", saved);

@@ -9,5 +9,12 @@
   "done": "Готово!",
   "languageSelector": "Мова",
   "theme": "Тема",
-  "settings": "Налаштування"
+  "settings": "Налаштування",
+  "usePredefinedSet": "Використати готовий набір",
+  "selectSet": "Оберіть набір",
+  "setChristmas": "Різдво та свята",
+  "setIcebreakers": "Знайомство",
+  "setReflection": "Підсумки року",
+  "loadSet": "Завантажити набір",
+  "orEnterCustom": "Або введіть власні запитання"
 }

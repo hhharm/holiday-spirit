@@ -9,5 +9,12 @@
   "done": "Done!",
   "languageSelector": "Language",
   "theme": "Theme",
-  "settings": "Settings"
+  "settings": "Settings",
+  "usePredefinedSet": "Use Predefined Set",
+  "selectSet": "Select a set",
+  "setChristmas": "Christmas & Holidays",
+  "setIcebreakers": "Ice Breakers",
+  "setReflection": "Year Reflection",
+  "loadSet": "Load Set",
+  "orEnterCustom": "Or enter your own questions"
 }

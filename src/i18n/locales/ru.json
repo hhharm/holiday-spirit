@@ -9,5 +9,12 @@
   "done": "Готово!",
   "languageSelector": "Язык",
   "theme": "Тема",
-  "settings": "Настройки"
+  "settings": "Настройки",
+  "usePredefinedSet": "Использовать готовый набор",
+  "selectSet": "Выберите набор",
+  "setChristmas": "Рождество и праздники",
+  "setIcebreakers": "Знакомство",
+  "setReflection": "Итоги года",
+  "loadSet": "Загрузить набор",
+  "orEnterCustom": "Или введите свои вопросы"
 }

@@ -1,0 +1,70 @@
+textarea {
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--text-dark);
+  resize: vertical;
+}
+
+.questions-textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.predefined-sets {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.set-selector {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.set-select {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid var(--text-muted);
+  border-radius: 6px;
+  background: var(--bg-card);
+  color: var(--text-dark);
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  opacity: 0.8;
+}
+
+.set-select:hover {
+  border-color: var(--primary);
+  opacity: 1;
+}
+
+.set-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.15);
+  opacity: 1;
+}
+
+.separator {
+  margin: 16px 0;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  position: relative;
+  text-align: center;
+}
+
+.separator::before {
+  left: 0;
+}
+
+.separator::after {
+  right: 0;
+}
+
+.proceed-button {
+  margin-top: 20px;
+}

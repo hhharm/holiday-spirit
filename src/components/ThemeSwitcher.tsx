@@ -10,7 +10,7 @@ const themes = [
 function ThemeSwitcher() {
   const { t } = useTranslation();
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "light";
+    return localStorage.getItem("theme") || "christmas";
   });
 
   useEffect(() => {
