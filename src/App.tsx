@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import QuestionsInput from "./components/QuestionsInput";
-import QuestionsGrid from "./components/QuestionsGrid";
+import QuestionsGrid from "./components/QuestionsBoard/QuestionsGrid";
 import SettingsPopup from "./components/SettingsPopup";
 
 function App() {

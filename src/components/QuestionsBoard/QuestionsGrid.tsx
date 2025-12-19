@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import Button from "./shared/Button";
+import Button from "../shared/Button";
+import QuestionCard from "./QuestionCard";
+import "./QuestionsGrid.css";
 
 interface QuestionsGridProps {
   savedQuestions: string[];
@@ -41,15 +43,12 @@ function QuestionsGrid({
     <div className="questions-grid-container">
       <div className="questions-grid">
         {savedQuestions.map((_, index) => (
-          <div
+          <QuestionCard
             key={index}
-            className={`question-card ${
-              openedQuestions.includes(index) ? "opened" : ""
-            }`}
-            onClick={() => handleCardClick(index)}
-          >
-            {index + 1}
-          </div>
+            index={index}
+            isOpened={openedQuestions.includes(index)}
+            onClick={handleCardClick}
+          />
         ))}
       </div>
       <div className="control-buttons">
