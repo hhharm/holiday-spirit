@@ -7,5 +7,7 @@
   "question": "Вопрос",
   "close": "Закрыть",
   "done": "Готово!",
-  "languageSelector": "Язык"
+  "languageSelector": "Язык",
+  "theme": "Тема",
+  "settings": "Настройки"
 }

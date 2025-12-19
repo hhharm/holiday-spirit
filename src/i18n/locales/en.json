@@ -7,5 +7,7 @@
   "question": "Question",
   "close": "Close",
   "done": "Done!",
-  "languageSelector": "Language"
+  "languageSelector": "Language",
+  "theme": "Theme",
+  "settings": "Settings"
 }

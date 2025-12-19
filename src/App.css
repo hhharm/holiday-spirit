@@ -2,27 +2,30 @@
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
 }
+
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  padding: 40px 20px;
+  background: var(--bg);
 }
 
 textarea {
   border: 2px solid var(--primary);
   border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--text-dark);
   resize: vertical;
 }
 .questions-textarea {
   width: 100%;
   padding: 10px;
-  font-size: 16px;
-}
-.proceed-button {
-  margin-top: 20px;
-  padding: 10px 30px;
   font-size: 16px;
 }
 
@@ -35,6 +38,10 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: var(--bg);
+}
+
+[data-theme="christmas"] .questions-grid-container {
   background-image: url(/holiday-pic.jpg);
   background-size: cover;
   background-position: center;
@@ -91,7 +98,7 @@ textarea {
 }
 
 .popup-content {
-  background: white;
+  background: var(--bg-card);
   width: 80vw;
   height: 80vh;
   border-radius: 16px;
@@ -123,32 +130,64 @@ textarea {
   display: flex;
   gap: 20px;
 }
-.popup-button {
-  padding: 12px 32px;
-  border-radius: 8px;
-  border: 2px solid;
-  font: 600 1rem/1;
+
+.settings-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.settings-popup {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 24px;
+  min-width: 300px;
+  box-shadow: 0 10px 40px var(--shadow-dark);
+  backdrop-filter: blur(20px);
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 12px;
+}
+
+.settings-header h3 {
+  margin: 0;
+  color: var(--text-dark);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.settings-close {
+  background: none;
+  border: none;
   cursor: pointer;
-  transition: all 0.25s;
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.2s;
+  font-size: 20px;
+  line-height: 1;
 }
-.popup-button.primary {
-  background: var(--primary);
-  color: white;
-  border-color: var(--primary);
+.settings-close:hover {
+  background: rgba(0, 0, 0, 0.1);
 }
-.popup-button.primary:hover {
-  background: var(--primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(100, 108, 255, 0.4);
-}
-.popup-button.secondary {
-  background: transparent;
-  color: var(--primary);
-  border-color: var(--primary);
-}
-.popup-button.secondary:hover {
-  background: rgba(100, 108, 255, 0.1);
-  transform: translateY(-2px);
+
+.settings-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .control-buttons {
@@ -159,54 +198,45 @@ textarea {
   gap: 10px;
   z-index: 1000;
 }
-.small-button {
-  padding: 8px 16px;
-  font-size: 0.875rem;
-  border-radius: 6px;
-  border: none;
-  background: rgba(100, 108, 255, 0.9);
-  color: white;
-  cursor: pointer;
-  transition: all 0.25s;
-  box-shadow: 0 2px 4px var(--shadow);
-}
-.small-button:hover {
-  background: rgba(83, 91, 242, 0.9);
-  transform: translateY(-2px);
-}
 
-.language-switcher {
+.settings-button-container {
   position: fixed;
   top: 20px;
   right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  background: var(--bg-card);
-  padding: 12px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px var(--shadow);
-  backdrop-filter: blur(10px);
   z-index: 1000;
 }
-.language-switcher label {
+
+.proceed-button {
+  margin-top: 20px;
+}
+
+.language-switcher label,
+.theme-switcher label {
   font: 600 12px/1;
   color: var(--text-dark);
   margin-bottom: 4px;
+  margin-right: 8px;
 }
-.language-select {
+
+.language-select,
+.theme-select {
   padding: 6px 12px;
   border: 2px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
-  background: white;
+  background: var(--bg-light);
+  color: var(--text);
   cursor: pointer;
   transition: border-color 0.2s;
 }
-.language-select:hover {
+
+.language-select:hover,
+.theme-select:hover {
   border-color: var(--accent);
 }
-.language-select:focus {
+
+.language-select:focus,
+.theme-select:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);

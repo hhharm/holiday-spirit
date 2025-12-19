@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import QuestionsInput from "./components/QuestionsInput";
 import QuestionsGrid from "./components/QuestionsGrid";
-import LanguageSwitcher from "./components/LanguageSwitcher";
+import SettingsPopup from "./components/SettingsPopup";
 
 function App() {
   const [savedQuestions, setSavedQuestions] = useState<string[]>(() => {
@@ -48,7 +48,7 @@ function App() {
   if (savedQuestions.length > 0) {
     return (
       <>
-        <LanguageSwitcher />
+        <SettingsPopup />
         <QuestionsGrid
           savedQuestions={savedQuestions}
           openedQuestions={openedQuestions}
@@ -62,7 +62,7 @@ function App() {
 
   return (
     <>
-      <LanguageSwitcher />
+      <SettingsPopup />
       <QuestionsInput onSave={handleQuestionsSaved} />
     </>
   );

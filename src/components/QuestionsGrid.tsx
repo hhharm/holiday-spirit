@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import Button from "./shared/Button";
 
 interface QuestionsGridProps {
   savedQuestions: string[];
@@ -52,12 +53,12 @@ function QuestionsGrid({
         ))}
       </div>
       <div className="control-buttons">
-        <button className="small-button" onClick={onRestart}>
+        <Button color="secondary" size="small" onClick={onRestart}>
           {t("restartCards")}
-        </button>
-        <button className="small-button" onClick={onReset}>
+        </Button>
+        <Button color="secondary" size="small" onClick={onReset}>
           {t("resetQuestions")}
-        </button>
+        </Button>
       </div>
 
       {selectedQuestion !== null && (
@@ -68,12 +69,12 @@ function QuestionsGrid({
             </h2>
             <p className="question-text">{savedQuestions[selectedQuestion]}</p>
             <div className="popup-buttons">
-              <button className="popup-button secondary" onClick={handleClose}>
+              <Button color="secondary" onClick={handleClose}>
                 {t("close")}
-              </button>
-              <button className="popup-button primary" onClick={handleDone}>
+              </Button>
+              <Button color="primary" onClick={handleDone}>
                 {t("done")}
-              </button>
+              </Button>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import Button from "./shared/Button";
 
 interface QuestionsInputProps {
   onSave: () => void;
@@ -35,9 +36,13 @@ function QuestionsInput({ onSave }: QuestionsInputProps) {
         placeholder={t("questionsPlaceholder")}
         rows={10}
       />
-      <button className="proceed-button" onClick={handleProceed}>
+      <Button
+        color="primary"
+        className="proceed-button"
+        onClick={handleProceed}
+      >
         {t("proceed")}
-      </button>
+      </Button>
     </div>
   );
 }

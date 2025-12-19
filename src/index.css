@@ -11,6 +11,8 @@
   --bg-overlay: rgba(0, 0, 0, 0.7);
   --shadow: rgba(0, 0, 0, 0.1);
   --shadow-dark: rgba(0, 0, 0, 0.3);
+  --bg-secondary: transparent;
+  --bg-secondary-hover: transparent;
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -19,6 +21,46 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+[data-theme="light"] {
+  --primary: #646cff;
+  --primary-hover: #535bf2;
+  --text: #213547;
+  --text-dark: #333;
+  --bg: white;
+  --bg-light: #f9f9f9;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-secondary: transparent;
+  --bg-secondary-hover: transparent;
+}
+
+[data-theme="dark"] {
+  --primary: #646cff;
+  --primary-hover: #535bf2;
+  --text: rgba(255, 255, 255, 0.87);
+  --text-dark: #fff;
+  --bg: #242424;
+  --bg-light: #1a1a1a;
+  --bg-card: rgba(50, 50, 50, 0.9);
+  --bg-overlay: rgba(0, 0, 0, 0.7);
+  --shadow: rgba(255, 255, 255, 0.1);
+  --bg-secondary: transparent;
+  --bg-secondary-hover: transparent;
+}
+
+[data-theme="christmas"] {
+  --primary: #228b22;
+  --primary-hover: #1a6b1a;
+  --accent: #c0c0c0;
+  --text: #f5f5dc;
+  --text-dark: #2f4f2f;
+  --bg: #0f2a0f;
+  --bg-light: #1a3d1a;
+  --bg-card: rgba(255, 248, 220, 0.95);
+  --shadow: rgba(34, 139, 34, 0.2);
+  --bg-secondary: rgb(244 255 244);
+  --bg-secondary-hover: rgb(244 255 244);
 }
 
 a {
@@ -44,22 +86,7 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font: inherit;
-  background: var(--primary);
-  color: white;
   cursor: pointer;
   transition: 0.25s;
-}
-button:hover {
-  background: var(--primary-hover);
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --text: #213547;
-    --bg: white;
-    --bg-light: #f9f9f9;
-  }
 }
