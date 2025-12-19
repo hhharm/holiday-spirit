@@ -1,0 +1,11 @@
+{
+  "enterQuestions": "Введите вопросы",
+  "questionsPlaceholder": "Введите вопросы для игры (по одному на строку)...",
+  "proceed": "Начать",
+  "restartCards": "Перезапустить",
+  "resetQuestions": "Ввести вопросы заново",
+  "question": "Вопрос",
+  "close": "Закрыть",
+  "done": "Готово!",
+  "languageSelector": "Язык"
+}

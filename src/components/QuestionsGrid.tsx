@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface QuestionsGridProps {
   savedQuestions: string[];
@@ -16,6 +17,7 @@ function QuestionsGrid({
   onMarkAsOpened,
 }: QuestionsGridProps) {
   const [selectedQuestion, setSelectedQuestion] = useState<number | null>(null);
+  const { t } = useTranslation();
 
   const handleCardClick = (index: number) => {
     if (!openedQuestions.includes(index)) {
@@ -35,15 +37,7 @@ function QuestionsGrid({
   };
 
   return (
-    <div
-      className="questions-grid-container"
-      style={{
-        backgroundImage: "url(/holiday-pic.jpg)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        minHeight: "100vh",
-      }}
-    >
+    <div className="questions-grid-container">
       <div className="questions-grid">
         {savedQuestions.map((_, index) => (
           <div
@@ -52,11 +46,6 @@ function QuestionsGrid({
               openedQuestions.includes(index) ? "opened" : ""
             }`}
             onClick={() => handleCardClick(index)}
-            style={{
-              cursor: openedQuestions.includes(index)
-                ? "not-allowed"
-                : "pointer",
-            }}
           >
             {index + 1}
           </div>
@@ -64,24 +53,26 @@ function QuestionsGrid({
       </div>
       <div className="control-buttons">
         <button className="small-button" onClick={onRestart}>
-          Restart cards
+          {t("restartCards")}
         </button>
         <button className="small-button" onClick={onReset}>
-          Reset questions
+          {t("resetQuestions")}
         </button>
       </div>
 
       {selectedQuestion !== null && (
         <div className="popup-overlay" onClick={handleClose}>
           <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-            <h2>Question {selectedQuestion + 1}</h2>
+            <h2>
+              {t("question")} {selectedQuestion + 1}
+            </h2>
             <p className="question-text">{savedQuestions[selectedQuestion]}</p>
             <div className="popup-buttons">
               <button className="popup-button secondary" onClick={handleClose}>
-                Close
+                {t("close")}
               </button>
               <button className="popup-button primary" onClick={handleDone}>
-                Done
+                {t("done")}
               </button>
             </div>
           </div>

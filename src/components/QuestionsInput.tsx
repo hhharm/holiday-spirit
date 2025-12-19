@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface QuestionsInputProps {
   onSave: () => void;
@@ -6,6 +7,7 @@ interface QuestionsInputProps {
 
 function QuestionsInput({ onSave }: QuestionsInputProps) {
   const [questions, setQuestions] = useState("");
+  const { t } = useTranslation();
 
   const handleProceed = () => {
     if (questions.trim()) {
@@ -25,19 +27,16 @@ function QuestionsInput({ onSave }: QuestionsInputProps) {
 
   return (
     <div className="app">
-      <h1>Enter Your Questions</h1>
+      <h1>{t("enterQuestions")}</h1>
       <textarea
+        className="questions-textarea"
         value={questions}
         onChange={(e) => setQuestions(e.target.value)}
-        placeholder="Enter your questions (one per line)..."
+        placeholder={t("questionsPlaceholder")}
         rows={10}
-        style={{ width: "100%", padding: "10px", fontSize: "16px" }}
       />
-      <button
-        onClick={handleProceed}
-        style={{ marginTop: "20px", padding: "10px 30px", fontSize: "16px" }}
-      >
-        Proceed
+      <button className="proceed-button" onClick={handleProceed}>
+        {t("proceed")}
       </button>
     </div>
   );
