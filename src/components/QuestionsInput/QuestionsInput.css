@@ -6,10 +6,26 @@ textarea {
   resize: vertical;
 }
 
+.instructions {
+  display: flex;
+  gap: 8px;
+  width: calc(100vw - 120px);
+}
+
+.instructions-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .questions-textarea {
   width: 100%;
   padding: 10px;
   font-size: 16px;
+}
+
+.questions-shaffle-button {
+  height: 40px;
 }
 
 .predefined-sets {

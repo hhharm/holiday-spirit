@@ -3,6 +3,14 @@ import { useTranslation } from "react-i18next";
 import Button from "../shared/Button";
 import QuestionCard from "./QuestionCard";
 import "./QuestionsGrid.css";
+import {
+  IconDownload,
+  IconEyeCheck,
+  IconEyeX,
+  IconRefreshAlert,
+  IconRotateClockwise,
+} from "@tabler/icons-react";
+import { ICON_PROPS } from "../../constants/icons";
 
 interface QuestionsGridProps {
   savedQuestions: string[];
@@ -52,15 +60,25 @@ function QuestionsGrid({
         ))}
       </div>
       <div className="control-buttons">
-        <Button color="secondary" size="small" onClick={onRestart}>
-          {t("restartCards")}
-        </Button>
-        <Button color="secondary" size="small" onClick={onReset}>
-          {t("resetQuestions")}
-        </Button>
         <Button
           color="secondary"
           size="small"
+          onClick={onRestart}
+          title={t("restartCards")}
+          startIcon={<IconRotateClockwise {...ICON_PROPS} />}
+        ></Button>
+        <Button
+          color="secondary"
+          size="small"
+          onClick={onReset}
+          title={t("resetQuestions")}
+          startIcon={<IconRefreshAlert {...ICON_PROPS} />}
+        ></Button>
+        <Button
+          color="secondary"
+          startIcon={<IconDownload {...ICON_PROPS} />}
+          size="small"
+          title={t("exportQuestions")}
           onClick={() => {
             const text = savedQuestions.join("\n");
             const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
@@ -73,9 +91,7 @@ function QuestionsGrid({
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
           }}
-        >
-          {t("exportQuestions")}
-        </Button>
+        ></Button>
       </div>
 
       {selectedQuestion !== null && (
@@ -86,10 +102,18 @@ function QuestionsGrid({
             </h2>
             <p className="question-text">{savedQuestions[selectedQuestion]}</p>
             <div className="popup-buttons">
-              <Button color="secondary" onClick={handleClose}>
+              <Button
+                color="secondary"
+                onClick={handleClose}
+                startIcon={<IconEyeX {...ICON_PROPS} />}
+              >
                 {t("close")}
               </Button>
-              <Button color="primary" onClick={handleDone}>
+              <Button
+                color="primary"
+                onClick={handleDone}
+                startIcon={<IconEyeCheck {...ICON_PROPS} />}
+              >
                 {t("done")}
               </Button>
             </div>

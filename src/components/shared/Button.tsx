@@ -4,14 +4,18 @@ import "./Button.css";
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: "primary" | "secondary" | "tertiary" | "small";
   size?: "normal" | "small";
-  children: ReactNode;
+  children?: ReactNode;
+  startIcon?: ReactNode;
+  endIcon?: ReactNode;
 }
 
 function Button({
   color = "primary",
   size = "normal",
+  startIcon,
   children,
   className = "",
+  endIcon,
   ...props
 }: ButtonProps) {
   const baseClasses = "button";
@@ -22,7 +26,9 @@ function Button({
 
   return (
     <button className={combinedClassName} {...props}>
-      {children}
+      {startIcon ? startIcon : null}
+      {children ? children : null}
+      {endIcon ? endIcon : null}
     </button>
   );
 }

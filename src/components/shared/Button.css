@@ -5,8 +5,10 @@
   font: inherit;
   cursor: pointer;
   transition: all 0.25s;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
-
 /* Colors */
 .button--primary {
   background: var(--primary);

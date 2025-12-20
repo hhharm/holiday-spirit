@@ -33,7 +33,7 @@
 }
 
 .question-card.opened {
-  background: rgba(0, 12, 239, 0.74);
+  background:rgb(215 215 215 / 74%);
   color: var(--text-muted);
   cursor: not-allowed;
   opacity: 0.6;

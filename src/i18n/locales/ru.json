@@ -20,8 +20,9 @@
   "setIcebreakers": "Знакомство",
   "setReflection": "Итоги года",
   "loadSet": "Загрузить набор",
-  "importQuestions": "Импорт вопросов",
+  "importQuestions": "Импортировать вопросы",
   "orEnterCustom": "Или введите свои вопросы",
   "orImportFromFile": "Или импортируйте из файла",
-  "orSelectPredefined": "Или выберите готовый набор"
+  "orSelectPredefined": "Или выберите готовый набор",
+  "randomizeQuestions": "Перемешать"
 }

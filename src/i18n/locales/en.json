@@ -23,5 +23,6 @@
   "importQuestions": "Import questions",
   "orEnterCustom": "Or enter your own questions",
   "orImportFromFile": "Or import from file",
-  "orSelectPredefined": "Or select a predefined set"
+  "orSelectPredefined": "Or select a predefined set",
+  "randomizeQuestions": "Randomize"
 }

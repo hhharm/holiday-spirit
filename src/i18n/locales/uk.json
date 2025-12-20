@@ -23,5 +23,6 @@
   "importQuestions": "Імпорт питань",
   "orEnterCustom": "Або введіть власні запитання",
   "orImportFromFile": "Або імпортуйте з файлу",
-  "orSelectPredefined": "Або оберіть готовий набір"
+  "orSelectPredefined": "Або оберіть готовий набір",
+  "randomizeQuestions": "Перемішати"
 }

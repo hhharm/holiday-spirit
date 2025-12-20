@@ -3,6 +3,14 @@ import { useTranslation } from "react-i18next";
 import Button from "../shared/Button";
 import { predefinedSets } from "../../data/predefinedSets";
 import "./QuestionsInput.css";
+import {
+  IconArrowNarrowRight,
+  IconArrowsShuffle,
+  IconSend,
+  IconTrash,
+  IconUpload,
+} from "@tabler/icons-react";
+import { ICON_PROPS } from "../../constants/icons";
 
 interface QuestionsInputProps {
   onSave: () => void;
@@ -22,6 +30,29 @@ function QuestionsInput({ onSave }: QuestionsInputProps) {
         selectedSet.questions[lang] || selectedSet.questions.en;
       setQuestions(questionsArray.join("\n"));
     }
+  };
+
+  const handleRandomize = () => {
+    if (questions.trim()) {
+      // Split by newlines and filter empty lines
+      const questionArray = questions
+        .split("\n")
+        .map((q) => q.trim())
+        .filter((q) => q.length > 0);
+
+      // Fisher-Yates shuffle algorithm
+      const shuffled = [...questionArray];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+
+      setQuestions(shuffled.join("\n"));
+    }
+  };
+
+  const handleClear = () => {
+    setQuestions("");
   };
 
   const handleProceed = () => {
@@ -44,13 +75,33 @@ function QuestionsInput({ onSave }: QuestionsInputProps) {
     <div className="app">
       <h1>{t("enterQuestions")}</h1>
 
-      <textarea
-        className="questions-textarea"
-        value={questions}
-        onChange={(e) => setQuestions(e.target.value)}
-        placeholder={t("questionsPlaceholder")}
-        rows={10}
-      />
+      <div className="instructions">
+        <textarea
+          className="questions-textarea"
+          value={questions}
+          onChange={(e) => setQuestions(e.target.value)}
+          placeholder={t("questionsPlaceholder")}
+          rows={10}
+        />
+        <div className="instructions-panel">
+          <Button
+            color="secondary"
+            size="small"
+            onClick={handleRandomize}
+            disabled={!questions.trim()}
+            className="questions-shaffle-button"
+            startIcon={<IconArrowsShuffle {...ICON_PROPS} />}
+          ></Button>
+          <Button
+            color="secondary"
+            size="small"
+            onClick={handleClear}
+            disabled={!questions.trim()}
+            className="questions-shaffle-button"
+            startIcon={<IconTrash {...ICON_PROPS} />}
+          ></Button>
+        </div>
+      </div>
 
       <div className="separator">{t("orImportFromFile")}</div>
 
@@ -76,8 +127,8 @@ function QuestionsInput({ onSave }: QuestionsInputProps) {
       <Button
         color="secondary"
         size="small"
+        startIcon={<IconUpload {...ICON_PROPS} />}
         onClick={() => fileInputRef.current?.click()}
-        style={{ marginBottom: 8 }}
       >
         {t("importQuestions")}
       </Button>
@@ -101,6 +152,7 @@ function QuestionsInput({ onSave }: QuestionsInputProps) {
           <Button
             color="secondary"
             size="small"
+            startIcon={<IconSend {...ICON_PROPS} />}
             onClick={handleLoadSet}
             disabled={!selectedSetId}
           >
@@ -113,6 +165,7 @@ function QuestionsInput({ onSave }: QuestionsInputProps) {
         color="primary"
         className="proceed-button"
         onClick={handleProceed}
+        endIcon={<IconArrowNarrowRight {...ICON_PROPS} />}
       >
         {t("proceed")}
       </Button>
