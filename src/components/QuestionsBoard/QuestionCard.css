@@ -1,14 +1,15 @@
 .question-card {
   aspect-ratio: 1;
-  background: var(--bg-card);
+  /* background: var(--bg-card); */
+      background: linear-gradient(45deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
   border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: bold;
   line-height: 1;
-  color: var(--primary);
+  color: #fff;
   cursor: pointer;
   transition:
     transform 0.2s,
@@ -17,7 +18,11 @@
     0 8px 16px var(--shadow),
     0 2px 4px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* border: 1px solid rgba(255, 255, 255, 0.1); */
+  text-shadow: -1px -1px 0 #a2a2a2,
+    1px -1px 0 #a2a2a2,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .question-card:hover {
