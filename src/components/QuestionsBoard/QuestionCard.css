@@ -1,47 +1,65 @@
 .question-card {
+  position: relative;
   aspect-ratio: 1;
-  /* background: var(--bg-card); */
-      background: linear-gradient(45deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
-  border-radius: 12px;
+  width: 100%;
+  background: var(--card-face);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 5rem;
-  font-weight: bold;
+  padding: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
   line-height: 1;
-  color: #fff;
+  color: var(--card-number);
   cursor: pointer;
   transition:
     transform 0.2s,
-    box-shadow 0.2s;
+    box-shadow 0.2s,
+    border-color 0.2s;
   box-shadow:
     0 8px 16px var(--shadow),
-    0 2px 4px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  /* border: 1px solid rgba(255, 255, 255, 0.1); */
-  text-shadow: -1px -1px 0 #a2a2a2,
-    1px -1px 0 #a2a2a2,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    0 2px 4px var(--shadow);
 }
 
-.question-card:hover {
-  transform: translateY(-5px);
+.question-card:hover:not(:disabled) {
+  transform: translateY(-6px) rotate(-1.5deg);
+  border-color: var(--ring);
   box-shadow:
-    0 12px 24px rgba(0, 0, 0, 0.2),
-    0 4px 8px rgba(0, 0, 0, 0.15);
+    0 14px 28px var(--shadow-dark),
+    0 0 0 3px var(--ring);
+}
+
+.question-card:active:not(:disabled) {
+  transform: translateY(-2px) scale(0.98);
+}
+
+.question-card.highlighted {
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 4px var(--ring),
+    0 14px 28px var(--shadow-dark);
+  transform: scale(1.08);
+  z-index: 2;
 }
 
 .question-card.opened {
-  background:rgb(215 215 215 / 74%);
-  color: var(--text-muted);
-  cursor: not-allowed;
-  opacity: 0.6;
+  background: var(--card-opened-bg);
+  border-color: transparent;
+  color: var(--card-opened-color);
+  cursor: default;
+  box-shadow: none;
 }
 
-.question-card.opened:hover {
-  transform: none;
-  box-shadow:
-    0 8px 16px var(--shadow),
-    0 2px 4px rgba(0, 0, 0, 0.1);
+.question-card.opened::after {
+  content: "✓";
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--accent);
+  opacity: 0.8;
 }

@@ -1,36 +1,76 @@
 .questions-grid-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background: var(--bg);
+  padding: 24px 16px 110px;
 }
 
-[data-theme="christmas"] .questions-grid-container {
-  background-image: url(/holiday-pic.jpg);
-  background-size: cover;
-  background-position: center;
+.board-header {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.board-title {
+  margin: 0 0 12px;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--text);
+  text-shadow: 0 2px 12px var(--shadow-dark);
+}
+
+.board-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: min(420px, 86vw);
+  margin: 0 auto;
+}
+
+.progress-track {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+[data-theme="light"] .progress-track {
+  background: rgba(43, 58, 74, 0.1);
+  border-color: rgba(43, 58, 74, 0.08);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  transition: width 0.4s ease;
+}
+
+.progress-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-soft);
 }
 
 .questions-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 24px;
-  max-width: min(1600px, 90vw);
-  padding: 20px;
-  overflow-y: auto;
-  max-height: calc(100vh - 200px);
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 18px;
+  width: min(1100px, 94vw);
+  margin-top: 28px;
 }
 
 .control-buttons {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
+  width: min(900px, 96vw);
   z-index: 1000;
 }

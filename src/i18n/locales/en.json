@@ -1,10 +1,13 @@
 {
+  "appTitle": "Holiday Spirit",
   "enterQuestions": "Enter Your Questions",
+  "inputSubtitle": "Add icebreaker questions — one per line — and build your game board.",
   "questionsPlaceholder": "Enter your questions (one per line)...",
   "proceed": "Proceed",
   "restartCards": "Restart cards",
   "resetQuestions": "Reset questions",
   "exportQuestions": "Export questions",
+  "randomizeQuestions": "Randomize",
   "question": "Question",
   "close": "Close",
   "done": "Done!",
@@ -24,5 +27,17 @@
   "orEnterCustom": "Or enter your own questions",
   "orImportFromFile": "Or import from file",
   "orSelectPredefined": "Or select a predefined set",
-  "randomizeQuestions": "Randomize"
+  "randomCard": "Random card",
+  "players": "Players",
+  "playersHint": "Add everyone who's playing — the game will pick who answers each question and keep turns fair.",
+  "playerNamePlaceholder": "Enter a name...",
+  "addPlayer": "Add",
+  "noPlayersYet": "No players yet — add someone above!",
+  "answering": "Answering",
+  "pickSomeoneElse": "Pick someone else",
+  "progressAnswered": "{{done}} of {{total}} answered",
+  "allDoneTitle": "That's a wrap!",
+  "allDoneMessage": "Every question has been answered. Great talks — happy holidays! 🎄",
+  "playAgain": "Play again",
+  "newQuestions": "New questions"
 }

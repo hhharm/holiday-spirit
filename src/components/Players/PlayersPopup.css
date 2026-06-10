@@ -1,0 +1,98 @@
+.players-popup {
+  background: var(--bg-card);
+  color: var(--text-dark);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 24px;
+  width: min(420px, 92vw);
+  box-shadow: 0 16px 48px var(--shadow-dark);
+}
+
+.players-hint {
+  margin: 0 0 16px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.players-add-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.players-input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 14px;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.players-input:focus {
+  outline: none;
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px var(--ring);
+}
+
+.players-empty {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.players-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 40vh;
+  overflow-y: auto;
+}
+
+.player-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px 6px 14px;
+  border-radius: 999px;
+  background: var(--bg-light);
+  border: 1px solid var(--border-soft);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.player-count {
+  min-width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg-card);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.player-remove {
+  border: none;
+  background: none;
+  padding: 0 4px;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.player-remove:hover {
+  color: var(--primary);
+}

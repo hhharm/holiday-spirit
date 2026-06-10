@@ -13,7 +13,9 @@ function LanguageSwitcher() {
     // Persist selection and switch language
     try {
       localStorage.setItem("i18nextLng", languageCode);
-    } catch {}
+    } catch {
+      // localStorage unavailable (e.g. private mode) — i18next still switches in-memory
+    }
     i18n.changeLanguage(languageCode);
   };
 

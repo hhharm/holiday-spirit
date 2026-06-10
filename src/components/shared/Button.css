@@ -1,36 +1,53 @@
 .button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font: inherit;
-  cursor: pointer;
-  transition: all 0.25s;
-  display: flex;
-  gap: 8px;
+  display: inline-flex;
   align-items: center;
+  gap: 6px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
 }
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
 /* Colors */
 .button--primary {
-  background: var(--primary);
-  color: white;
-  font-size: 16px;
+  background: linear-gradient(160deg, var(--primary) 0%, var(--primary-hover) 100%);
+  color: var(--primary-contrast);
+  box-shadow:
+    0 4px 12px var(--shadow-dark),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
-.button--primary:hover {
-  background: var(--primary-hover);
-  transform: translateY(-1px);
+.button--primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 18px var(--shadow-dark),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .button--secondary {
   background: var(--bg-secondary);
-  color: var(--primary);
-  border: 2px solid var(--primary);
-  font-weight: 600;
+  color: var(--text-dark);
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 2px 8px var(--shadow);
 }
-.button--secondary:hover {
+.button--secondary:hover:not(:disabled) {
   background: var(--bg-secondary-hover);
-  border-color: var(--primary-hover);
-  color: var(--primary-hover);
+  border-color: var(--ring);
   transform: translateY(-2px);
+  box-shadow: 0 6px 14px var(--shadow);
 }
 
 .button--tertiary {
@@ -38,25 +55,17 @@
   color: var(--text-dark);
   border: none;
 }
-.button--tertiary:hover {
-  background: transparent;
+.button--tertiary:hover:not(:disabled) {
   color: var(--primary);
-  transform: translateY(-1px);
 }
 
 /* Sizes */
 .button--small {
-  padding: 8px 16px;
+  padding: 8px 18px;
   font-size: 0.875rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px var(--shadow);
-}
-.button--small:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px var(--shadow);
 }
 
 .button--normal {
   padding: 12px 32px;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }

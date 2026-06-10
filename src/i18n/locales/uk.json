@@ -1,10 +1,13 @@
 {
+  "appTitle": "Holiday Spirit",
   "enterQuestions": "Введіть запитання",
+  "inputSubtitle": "Додайте запитання для розмови — по одному на рядок — і створіть ігрове поле.",
   "questionsPlaceholder": "Введіть запитання для гри (одне на рядок)...",
   "proceed": "Почати",
   "restartCards": "Перезапустити",
   "resetQuestions": "Ввести запитання заново",
   "exportQuestions": "Експорт питань",
+  "randomizeQuestions": "Перемішати",
   "question": "Запитання",
   "close": "Закрити",
   "done": "Готово!",
@@ -24,5 +27,17 @@
   "orEnterCustom": "Або введіть власні запитання",
   "orImportFromFile": "Або імпортуйте з файлу",
   "orSelectPredefined": "Або оберіть готовий набір",
-  "randomizeQuestions": "Перемішати"
+  "randomCard": "Випадкова картка",
+  "players": "Гравці",
+  "playersHint": "Додайте всіх, хто грає — гра сама обере, хто відповідає на запитання, і подбає про чесну чергу.",
+  "playerNamePlaceholder": "Введіть ім'я...",
+  "addPlayer": "Додати",
+  "noPlayersYet": "Поки немає гравців — додайте когось вище!",
+  "answering": "Відповідає",
+  "pickSomeoneElse": "Обрати когось іншого",
+  "progressAnswered": "{{done}} з {{total}} відповіли",
+  "allDoneTitle": "Це фінал!",
+  "allDoneMessage": "Усі запитання відкрито. Чудові розмови — гарних свят! 🎄",
+  "playAgain": "Грати ще раз",
+  "newQuestions": "Нові запитання"
 }

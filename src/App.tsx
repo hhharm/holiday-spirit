@@ -13,13 +13,11 @@ function App() {
 
   const [savedQuestions, setSavedQuestions] = useState<string[]>(() => {
     const saved = localStorage.getItem("saved_questions");
-    console.log("saved_questions:", saved);
     return saved ? JSON.parse(saved) : [];
   });
 
   const [openedQuestions, setOpenedQuestions] = useState<number[]>(() => {
     const opened = localStorage.getItem("opened_questions");
-    console.log("opened_questions:", opened);
     return opened ? JSON.parse(opened) : [];
   });
 
